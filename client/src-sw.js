@@ -23,6 +23,11 @@ warmStrategyCache({
   urls: ['/index.html', '/'],
   strategy: pageCache,
 });
+offlineFallback({
+  pageFallback: '/index.html',
+  pageFallback: '/',
+  strategy: pageCache,
+});
 
 
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
